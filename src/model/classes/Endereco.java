@@ -1,13 +1,23 @@
 package model.classes;
 
 public class Endereco {
-
+	
+	private long id;
 	private String rua;
 	private String numero;
 	private String complemento;
 	private String bairro;
 	private String cep;
 	
+	public Endereco(){
+	}
+	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
 	public String getRua() {
 		return rua;
 	}

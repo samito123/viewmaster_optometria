@@ -1,12 +1,22 @@
 package model.classes;
 
-public class Usuario extends Funcionario{
+import model.interfaces.UsuarioInterface;
+
+public class Usuario extends Funcionario implements UsuarioInterface{
 	
 	private long id;
 	private String login;
 	private String senha;
 	
 	public Usuario(){
+	}
+	
+	@Override
+	public boolean ValidaLogin() {
+		if(this.login.equals("Sam") && this.senha.equals("123"))
+			return true;
+		else
+			return false;
 	}
 	
 	public long getId() {

@@ -20,8 +20,8 @@
 <!-- Fim Angularjs -->
 
 <!-- JavaScript -->
-	<!-- js_custom -->
-		<script src="javascript/js_custom/login_custom.js" type="text/javascript" charset="UTF-8"></script>
+	<!-- angularjs_custom -->
+		<script src="javascript/angularjs_custom/login_angular_custom.js" type="text/javascript" charset="UTF-8"></script>
 <!-- Fim Angularjs -->
 
 <!-- Custom-->

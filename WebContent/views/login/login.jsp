@@ -1,6 +1,6 @@
+<%@page import="com.sun.xml.internal.txw2.Document"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="control.Teste"%>
 <%@ page import="model.classes.Usuario"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -12,11 +12,8 @@
 	<body ng-controller="ViewMaster as vm">
 		
 		<%@include  file="../includes/loading/loading.jsp" %>
-		
-		<%
-			String p = "";
-		%>
-		
+		<%@include  file="../includes/popup/mensagem_modal.jsp" %>
+			
 		<div class="container"> 
 			<script type="text/javascript">
 				sessionStorage.clear();
@@ -29,7 +26,7 @@
 				<div class="titulo_box_login">
 					Entre com os seus dados corretamente para acessar o sistema			
 				</div>
-				<form action="LoginServlet" method="post">		
+				<form ng-submit="vm.ValidaUsuarioForm()" name="form">		
 				
 					<input type="text" id="login" style="margin: 15px 20% 15px 20%; width: 60%;" 
 					placeholder="Digite seu login..." class="form-control" ng-model="vm.login" required maxlength="50">		
@@ -53,29 +50,3 @@
 		
 	</body>
 </html>
-
-<!-- ANGULAR JS -->
-	<script type="text/javascript">
-		var app = angular.module('vmApp',[] )
-		app.controller('ViewMaster', ['$http',function($http){
-			var acess = this;
-			var a = '<%=p%>';
-			if(a === "")
-			alert(a);
-			
-			acess.VerificaLoginDeUsuario = function(){
-				AbrirLoading();
-				var variaveis = "?chave=ValidaLogin&login="+acess.login+"&senha="+acess.senha;
-				$http.post('LoginServlet'+variaveis)
-	            .success(function (data, status, headers, config) {
-	            	console.log(data);
-            	}).error(function (data, status, header, config) {		            	
-            		console.log("erro: "+status);
-            	});
-				FecharLoading();
-			};
-				
-			FecharLoading();
-		}]);	
-	</script>
-<!-- ANGULAR JS -->

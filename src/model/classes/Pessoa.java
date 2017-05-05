@@ -2,7 +2,7 @@ package model.classes;
 
 public class Pessoa {
 
-	protected long id;
+	protected long pessoaId;
 	protected String nome;
 	protected String sexo;
 	protected String telefone;
@@ -15,11 +15,11 @@ public class Pessoa {
 	public Pessoa() {
 	}
 	
-	public long getId() {
-		return id;
+	public long getPessoaId() {
+		return pessoaId;
 	}
-	public void setId(long id) {
-		this.id = id;
+	public void setPessoaId(long pessoaId) {
+		this.pessoaId = pessoaId;
 	}
 	public String getNome() {
 		return nome;

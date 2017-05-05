@@ -1,19 +1,18 @@
 package model.classes;
 
-public class Funcionario extends Pessoa{
+public class Funcionario extends Usuario{
 
-	private long id;
+	private long funcionarioId;
 	private String ocupacao;
 	private Locacao locacao;
 	
 	public Funcionario(){
 	}
-	
-	public long getId() {
-		return id;
+	public long getFuncionarioId() {
+		return funcionarioId;
 	}
-	public void setId(long id) {
-		this.id = id;
+	public void setFuncionarioId(long funcionarioId) {
+		this.funcionarioId = funcionarioId;
 	}
 	public String getOcupacao() {
 		return ocupacao;

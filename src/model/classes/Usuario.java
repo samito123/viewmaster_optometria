@@ -1,29 +1,22 @@
 package model.classes;
 
-import model.interfaces.UsuarioInterface;
+import model.dao.UsuarioDAO;
+import model.interfaces.GsonServletInterface;
 
-public class Usuario extends Funcionario implements UsuarioInterface{
+public class Usuario extends Pessoa{
 	
-	private long id;
+	private long usuarioId;
 	private String login;
 	private String senha;
 	
 	public Usuario(){
 	}
-	
-	@Override
-	public boolean ValidaLogin() {
-		if(this.login.equals("Sam") && this.senha.equals("123"))
-			return true;
-		else
-			return false;
+		
+	public long getUsuarioId() {
+		return usuarioId;
 	}
-	
-	public long getId() {
-		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
+	public void setUsuarioId(long usuarioId) {
+		this.usuarioId = usuarioId;
 	}
 	public String getLogin() {
 		return login;
@@ -37,5 +30,5 @@ public class Usuario extends Funcionario implements UsuarioInterface{
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
+
 }

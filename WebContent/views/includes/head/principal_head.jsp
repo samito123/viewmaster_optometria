@@ -21,12 +21,12 @@
 
 <!-- JavaScript -->
 	<!-- angularjs_custom -->
-		<script src="javascript/angularjs_custom/login_angular_custom.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="javascript/angularjs_custom/principal_angular_custom.js" type="text/javascript" charset="UTF-8"></script>
 <!-- Fim Angularjs -->
 
 <!-- Custom-->
 	<!-- CSS Custom-->
-		<link href="css/customizacao/login.css" rel="stylesheet" type="text/css" charset="UTF-8">
+		<link href="css/customizacao/graficos.css" rel="stylesheet" type="text/css" charset="UTF-8">
 <!-- Fim Custom-->
 
 <!-- Bootstrap -->
@@ -35,4 +35,3 @@
 	<!-- JS -->
 		<script src="javascript/bootstrap/bootstrap.min.js" type="text/javascript" charset="UTF-8"></script>
 <!-- Fim Bootstrap -->
-

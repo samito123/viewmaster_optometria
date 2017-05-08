@@ -1,13 +1,11 @@
 <%@page import="com.sun.xml.internal.txw2.Document"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="model.classes.Usuario"%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html ng-app="vmApp">
 	<head>
-		<%@include  file="../includes/head/head_login.jsp" %>
+		<%@include  file="../includes/head/login_head.jsp" %>
 	</head>
 	<body ng-controller="ViewMaster as vm">
 		
@@ -15,10 +13,6 @@
 		<%@include  file="../includes/popup/mensagem_modal.jsp" %>
 			
 		<div class="container"> 
-			<script type="text/javascript">
-				sessionStorage.clear();
-			</script>
-			
 			<div class="box_login">			
 				<img src="imagens/icones/logo_icon.png"/>	
 				<p class=titulo_login_animacao>View Master</p>
@@ -50,3 +44,8 @@
 		
 	</body>
 </html>
+<!-- Animação letras -->
+	<script type="text/javascript">
+		
+	</script>
+<!-- Fim Animação letras -->

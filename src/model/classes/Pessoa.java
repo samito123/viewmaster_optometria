@@ -1,5 +1,7 @@
 package model.classes;
 
+import java.util.Date;
+
 public class Pessoa {
 
 	protected long pessoaId;
@@ -7,7 +9,7 @@ public class Pessoa {
 	protected String sexo;
 	protected String telefone;
 	protected String email;
-	protected String dataDeNascimento;
+	protected Date dataDeNascimento;
 	protected DadosPessoais dadosPessoais;
 	protected DadosProfissionais dadosProfissionais;
 	protected Endereco endereco;
@@ -45,10 +47,10 @@ public class Pessoa {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getDataDeNascimento() {
+	public Date getDataDeNascimento() {
 		return dataDeNascimento;
 	}
-	public void setDataDeNascimento(String dataDeNascimento) {
+	public void setDataDeNascimento(Date dataDeNascimento) {
 		this.dataDeNascimento = dataDeNascimento;
 	}
 	public DadosPessoais getDadosPessoais() {

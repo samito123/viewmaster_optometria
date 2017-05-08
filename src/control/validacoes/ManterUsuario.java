@@ -16,6 +16,7 @@ import model.dao.UsuarioDAO;
 
 import com.google.gson.Gson;
 
+import control.auxiliares.Md5;
 import control.factory.FabricaDeConexao;
 import control.servlet.GsonServlet;
 
@@ -36,7 +37,8 @@ public class ManterUsuario {
 			conn = new FabricaDeConexao().getConnection();
 			conn.setAutoCommit(false);
 			usuario = new UsuarioDAO(conn).
-					BuscarUsuario(request.getParameter("login"), request.getParameter("senha"));
+					BuscarUsuario(request.getParameter("login"),
+							new Md5().TransformaEmMd5(request.getParameter("senha")));
 			conn.commit();
 		}catch(Exception e){
 			conn.rollback();

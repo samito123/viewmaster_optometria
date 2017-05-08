@@ -24,4 +24,13 @@
   		<url-pattern>/LoginServlet</url-pattern>
   	</servlet-mapping>
   	
+  	<servlet>
+  		<servlet-name>Graficos</servlet-name>
+  		<jsp-file>/views/graficos/principal.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>Graficos</servlet-name>
+  		<url-pattern>/Graficos</url-pattern>
+  	</servlet-mapping>
+  	
 </web-app>

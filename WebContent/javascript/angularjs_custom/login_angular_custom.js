@@ -8,6 +8,7 @@ var app = angular.module('vmApp',[] )
 	app.controller('ViewMaster', ['$http',function($http){	
 		acess = this;
 		http = $http;
+		AnimacaoTextillate();
 		acess.ValidaUsuarioForm = function(){
 			ValidaUsuario()
 		};
@@ -15,7 +16,39 @@ var app = angular.module('vmApp',[] )
 			alert(detalhes);
 		};
 		FecharLoading();
-	}]);	
+	}]);
+
+function AnimacaoTextillate() { 
+	$(function () {
+		$('.titulo_login_animacao').textillate({      
+			// enable looping
+			loop: false,
+			initialDelay: 0,
+			autoStart: true,
+			in: {
+				// set the effect name
+				effect: 'flash',
+				// set the delay factor applied to each consecutive character
+				delayScale: 1.5,
+				// set the delay between each character
+				delay: 50,
+				// set to true to animate all the characters at the same time
+				sync: false,
+				// randomize the character sequence 
+				// (note that shuffle doesn't make sense with sync = true)
+				shuffle: true,
+				// reverse the character sequence 
+				// (note that reverse doesn't make sense with sync = true)
+				reverse: false,
+				// callback that executes once the animation has finished
+				callback: function () {}
+			}, 
+		// set the type of token to animate (available types: 'char' and 'word')
+		type: 'char'
+		});
+
+	});
+};
 
 function ValidaUsuario() { 
 	AbrirLoading();
@@ -31,7 +64,7 @@ function ValidaUsuario() {
 function VerificaUsuario(usuario){
 	if(usuario === "Chave inválida"){
 		ChaveInvalida();
-	}else if(usuario.login == undefined){
+	}else if(usuario.usuarioId == undefined){
 		UsuarioInvalido();
 	}else{
 		SalvarSessao(usuario);
@@ -50,10 +83,12 @@ function UsuarioInvalido(){
 }
 
 function SalvarSessao(usuario){
-	sessionStorage.setItem("usuario_id", usuario.id_usuario);
-	sessionStorage.setItem("nome", usuario.nome_usuario);
+	sessionStorage.setItem("usuario_id", usuario.usuarioId);
+	sessionStorage.setItem("login", usuario.login);
+	sessionStorage.setItem("nome", usuario.nome);
 	sessionStorage.setItem("usuario_logado", "Y");
-	console.log("Sessão salva");
+	window.location.href="Graficos"
+	
 }
 
 function RetornaErroPopUp(mensagem){

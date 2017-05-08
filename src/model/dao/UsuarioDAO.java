@@ -21,9 +21,12 @@ public class UsuarioDAO{
 	public Usuario BuscarUsuario(String login, String senha) throws SQLException {
 		Usuario usuario = null;
 		try {
-			String sql = "select u.usuario_id "
-					+ "from tb_usuario as u "
-					+ "where login = ? and senha = ?";
+			
+			String sql = "select u.usuario_id, u.login, p.nome "
+					+ "from tb_usuarios as u "
+					+ "join tb_pessoas as p "
+					+ "on p.pessoa_id = u.fk_pessoa "
+					+ "where u.login = ? and u.senha = ?";
 			
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, login);
@@ -32,9 +35,9 @@ public class UsuarioDAO{
 			
 			while(rs.next()){
 				usuario = new Usuario();
-				usuario.setUsuarioId(rs.getLong("usuario_id"));
-				//usuario.setLogin(rs.getString("login"));
-				//usuario.setSenha(rs.getString("Senha"));
+				usuario.setUsuarioId(rs.getLong("u.usuario_id"));
+				usuario.setLogin(rs.getString("u.login"));
+				usuario.setNome(rs.getString("p.nome"));
 			}
 			
 		} catch (Exception e) {

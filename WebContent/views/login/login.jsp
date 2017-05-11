@@ -44,8 +44,3 @@
 		
 	</body>
 </html>
-<!-- Animação letras -->
-	<script type="text/javascript">
-		
-	</script>
-<!-- Fim Animação letras -->

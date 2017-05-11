@@ -7,6 +7,8 @@ var app = angular.module('vmApp',[] )
 app.controller('ViewMaster', ['$http',function($http){	
 	acess = this;
 	http = $http;
+	acess.tituloDoMenu = "Home";
+	acess.user = sessionStorage.getItem("nome");
 	VerificaLoginAtivo();
 	FecharLoading();
 }]);	

@@ -33,4 +33,49 @@
   		<url-pattern>/Graficos</url-pattern>
   	</servlet-mapping>
   	
+  	<servlet>
+  		<servlet-name>RecuperarSenhaPassoUm</servlet-name>
+  		<jsp-file>/views/login/recuperarSenhaPassoUm.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>RecuperarSenhaPassoUm</servlet-name>
+  		<url-pattern>/RecuperarSenhaPassoUm</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>RecuperarSenhaPassoDois</servlet-name>
+  		<jsp-file>/views/login/recuperarSenhaPassoDois.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>RecuperarSenhaPassoDois</servlet-name>
+  		<url-pattern>/RecuperarSenhaPassoDois</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>RecuperarSenhaPassoTres</servlet-name>
+  		<jsp-file>/views/login/recuperarSenhaPassoTres.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>RecuperarSenhaPassoTres</servlet-name>
+  		<url-pattern>/RecuperarSenhaPassoTres</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>RecuperarSenhaPassoQuatroEmail</servlet-name>
+  		<jsp-file>/views/login/recuperarSenhaPassoQuatroEmail.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>RecuperarSenhaPassoQuatroEmail</servlet-name>
+  		<url-pattern>/RecuperarSenhaPassoQuatroEmail</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>RecuperarSenhaPassoQuatroPerguntaSecreta</servlet-name>
+  		<jsp-file>/views/login/recuperarSenhaPassoQuatroPerguntaSecreta.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>RecuperarSenhaPassoQuatroPerguntaSecreta</servlet-name>
+  		<url-pattern>/RecuperarSenhaPassoQuatroPerguntaSecreta</url-pattern>
+  	</servlet-mapping>
+  	
 </web-app>

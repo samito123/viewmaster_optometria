@@ -22,14 +22,14 @@
 				</div>
 				<form ng-submit="vm.ValidaUsuarioForm()" name="form">		
 				
-					<input type="text" id="login" style="margin: 15px 20% 15px 20%; width: 60%;" 
+					<input type="text" id="itLogin" style="margin: 15px 20% 15px 20%; width: 60%;" 
 					placeholder="Digite seu login..." class="form-control" ng-model="vm.login" required maxlength="50">		
 					
-					<input  type="password" id="senha" style="margin: 15px 20% 15px 20%; width: 60%;" 
+					<input type="password" id="itSenha" style="margin: 15px 20% 15px 20%; width: 60%;" 
 					placeholder="Digite sua senha..." class="form-control" ng-model="vm.senha" required maxlength="50">
 					
 					<div>
-						<button type="submit" id="entrar" style="width: 30%; margin: 0 0 15px 0;" 
+						<button type="submit" id="btnEntrar" style="width: 30%; margin: 0 0 15px 0;" 
 						class="btn btn-primary">Entrar</button>
 					</div>
 					

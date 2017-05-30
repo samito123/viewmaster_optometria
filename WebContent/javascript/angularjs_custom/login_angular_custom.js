@@ -10,10 +10,13 @@ var app = angular.module('vmApp',[] )
 		http = $http;
 		AnimacaoTextillate();
 		acess.ValidaUsuarioForm = function(){
-			ValidaUsuario()
+			ValidaUsuario();
 		};
 		acess.AlertDetalhes = function(){
 			alert(detalhes);
+		};
+		acess.Loading = function(){
+			AbrirLoading();
 		};
 		FecharLoading();
 	}]);
@@ -78,7 +81,7 @@ function ChaveInvalida(){
 
 function UsuarioInvalido(){
 	RetornaErroPopUp("Login ou senha inválido!");
-	detalhes = "Login e senha utilizados não são válidos para acesso ao sistema.\n" +
+	detalhes = "Login ou senha utilizados não são válidos para acesso ao sistema.\n" +
 			"Verifique se o login de usuário está digitado corretamente e redigite sua senha.";
 }
 

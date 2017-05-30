@@ -34,6 +34,22 @@ public class LoginServlet extends HttpServlet{
 			}
 			break;
 			
+		case "ValidaEmailDataDeNascimento":
+			try {
+				new ManterUsuario(request, response).ValidaEmailDataDeNascimento();
+			} catch (SQLException e) {
+				System.out.println("Erro LoginServlet-ValidaEmailDataDeNascimento: "+e);
+			}
+			break;
+			
+		case "ValidaEnvioDeEmailComNovaSenha":
+			try {
+				new ManterUsuario(request, response).ValidaEmailDataDeNascimento();
+			} catch (SQLException e) {
+				System.out.println("Erro LoginServlet-ValidaEmailDataDeNascimento: "+e);
+			}
+			break;
+			
 		default:
 			String resposta = new CodificaUTF8().CodificaString("Chave inválida");
 			PrintWriter out = response.getWriter();

@@ -5,6 +5,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -127,6 +128,39 @@ public class UsuarioDAOTest {
 			}
 		} catch (Exception e) {
 			System.out.println("Erro BuscarUsuario: "+e);
+		}finally{
+			rs.close();
+			ps.close();
+		}
+		assertEquals(usuario.getUsuarioId(), -1);
+		assertEquals(usuario.getNome(), "nomeTeste");
+	};
+	
+	@Test
+	public void ValidaEmailDataDeNascimento() throws SQLException{
+		Usuario usuario = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			
+			String sql = "select u.usuario_id, p.nome, p.email "
+					+ "from tb_usuarios as u "
+					+ "join tb_pessoas as p "
+					+ "on p.pessoa_id = u.fk_pessoa "
+					+ "where p.email = ? and p.data_de_nascimento = ?";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, "emailTeste");
+			ps.setDate(2, new ManipulaData().SetSqlDate("1988-07-22"));
+			rs = ps.executeQuery();
+			while(rs.next()){
+				usuario = new Usuario();
+				usuario.setUsuarioId(rs.getLong("u.usuario_id"));
+				usuario.setNome(rs.getString("p.nome"));
+				usuario.setEmail(rs.getString("p.email"));
+			}
+		} catch (Exception e) {
+			System.out.println("Erro ValidaEmailDataDeNascimento: "+e);
 		}finally{
 			rs.close();
 			ps.close();

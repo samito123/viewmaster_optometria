@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import control.auxiliares.ManipulaData;
 import control.factory.FabricaDeConexao;
 import model.classes.Usuario;
 
@@ -49,4 +50,32 @@ public class UsuarioDAO{
 		return usuario;
 	}
 
+	public Usuario ValidaEmailDataDeNascimento(String email, String dataDeNascimento) throws SQLException {
+		Usuario usuario = null;
+		try {
+			
+			String sql = "select u.usuario_id, p.nome, p.email "
+					+ "from tb_usuarios as u "
+					+ "join tb_pessoas as p "
+					+ "on p.pessoa_id = u.fk_pessoa "
+					+ "where p.email = ? and p.data_de_nascimento = ?";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, email);
+			ps.setDate(2, new ManipulaData().SetSqlDate(dataDeNascimento));
+			rs = ps.executeQuery();
+			while(rs.next()){
+				usuario = new Usuario();
+				usuario.setUsuarioId(rs.getLong("u.usuario_id"));
+				usuario.setNome(rs.getString("p.nome"));
+				usuario.setEmail(rs.getString("p.email"));
+			}
+		} catch (Exception e) {
+			System.out.println("Erro ValidaEmailDataDeNascimento: "+e);
+		}finally{
+			rs.close();
+			ps.close();
+		}
+		return usuario;
+	}
 }

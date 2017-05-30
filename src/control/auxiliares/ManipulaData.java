@@ -14,4 +14,8 @@ public class ManipulaData {
 		return data;
 	}
 
+	public java.sql.Date SetSqlDate(String data){
+		return java.sql.Date.valueOf(data);
+	}
+	
 }

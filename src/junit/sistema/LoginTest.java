@@ -32,15 +32,15 @@ private WebDriver driver;
 	}
 	
 	@Test
-	public void TestaLoginInvalido(){
+	public void LoginInvalido(){
 
-		WebElement login = driver.findElement(By.id("login"));
-		WebElement senha = driver.findElement(By.id("senha"));
-		WebElement botaoSalvar = driver.findElement(By.id("entrar"));
+		WebElement itLogin = driver.findElement(By.id("itLogin"));
+		WebElement itSenha = driver.findElement(By.id("itSenha"));
+		WebElement btnEntrar = driver.findElement(By.id("btnEntrar"));
 				
-		login.sendKeys("xyzxyzxyz"); 
-		senha.sendKeys("xyzxyzxyz");
-		botaoSalvar.submit();
+		itLogin.sendKeys("xyzxyzxyz"); 
+		itSenha.sendKeys("xyzxyzxyz");
+		btnEntrar.submit();
 		
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("modal")));
@@ -50,35 +50,34 @@ private WebDriver driver;
 	}
 	
 	@Test
-	public void TestaLoginValido(){
+	public void LoginValido(){
 
-		/*WebElement login = driver.findElement(By.id("login"));
-		WebElement senha = driver.findElement(By.id("senha"));
-		WebElement botaoSalvar = driver.findElement(By.id("entrar"));
+		WebElement itLogin = driver.findElement(By.id("itLogin"));
+		WebElement itSenha = driver.findElement(By.id("itSenha"));
+		WebElement btnEntrar = driver.findElement(By.id("btnEntrar"));
 				
-		login.sendKeys("samito"); 
-		senha.sendKeys("123");
-		botaoSalvar.submit();
+		itLogin.sendKeys("sam"); 
+		itSenha.sendKeys("123");
+		btnEntrar.submit();
 		
 		WebDriverWait wait = new WebDriverWait(driver, 30);
-	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("modal")));
-		
-		boolean achouNome = driver.getPageSource().contains("lalala sucesso"); 
-		assertTrue(achouNome);*/ 
+	    wait.until(ExpectedConditions.urlContains("http://localhost:8080/viewmaster_optometria/Graficos"));
+		boolean achouNome = driver.getPageSource().contains("Home"); 
+		assertTrue(achouNome);
 	}
 	
 	@Test
-	public void TestaFecharPopupPeloBotaoFechar(){
+	public void FecharPopupPeloBotaoFechar(){
 
-		WebElement login = driver.findElement(By.id("login"));
-		WebElement senha = driver.findElement(By.id("senha"));
-		WebElement botaoSalvar = driver.findElement(By.id("entrar"));
+		WebElement itLogin = driver.findElement(By.id("itLogin"));
+		WebElement itSenha = driver.findElement(By.id("itSenha"));
+		WebElement btnEntrar = driver.findElement(By.id("btnEntrar"));
 		WebElement botaoFecharModal = driver.findElement(By.id("botaoFecharModal"));
 		WebElement modal = driver.findElement(By.id("modal"));
 				
-		login.sendKeys("xyzxyzxyz"); 
-		senha.sendKeys("xyzxyzxyz");
-		botaoSalvar.submit();
+		itLogin.sendKeys("xyzxyzxyz"); 
+		itSenha.sendKeys("xyzxyzxyz");
+		btnEntrar.submit();
 		
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("modal")));
@@ -92,17 +91,17 @@ private WebDriver driver;
 	}
 	
 	@Test
-	public void TestaFecharPopupPeloBotaoClose(){
+	public void FecharPopupPeloBotaoClose(){
 
-		WebElement login = driver.findElement(By.id("login"));
-		WebElement senha = driver.findElement(By.id("senha"));
-		WebElement botaoSalvar = driver.findElement(By.id("entrar"));
+		WebElement itLogin = driver.findElement(By.id("itLogin"));
+		WebElement itSenha = driver.findElement(By.id("itSenha"));
+		WebElement btnEntrar = driver.findElement(By.id("btnEntrar"));
 		WebElement botaoCloseModal = driver.findElement(By.id("botaoCloseModal"));
 		WebElement modal = driver.findElement(By.id("modal"));
 				
-		login.sendKeys("xyzxyzxyz"); 
-		senha.sendKeys("xyzxyzxyz");
-		botaoSalvar.submit();
+		itLogin.sendKeys("xyzxyzxyz"); 
+		itSenha.sendKeys("xyzxyzxyz");
+		btnEntrar.submit();
 		
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("modal")));

@@ -19,7 +19,7 @@
 				</div>
 			 </div>
 			 <div class="modal-footer">
-				 <button id="botaoFecharModal" type='button' class='btn btn-primary' ng-click="vm.AlertDetalhes()">
+				 <button type='button' class='btn btn-primary' ng-click="vm.AlertDetalhes()">
 			 		Detalhes
 			 	</button>
 			 	<button id="botaoFecharModal" type='button' class='btn {{vm.btnModal}}' data-dismiss='modal'>
